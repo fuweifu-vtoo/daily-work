@@ -66,3 +66,23 @@ sudo apt install docker.io
 	- docker push your_image
 
 7. 参考[【入门】Docker练习场,手把手超详细操作说明](https://tianchi.aliyun.com/competition/entrance/231759/tab/174?spm=5176.12586973.0.0.1f232a3cpeutNb)
+
+## 直接修改镜像并推送
+
+1. 运行镜像:
+	- docker run -i -t imageid /bin/bash
+	- exit 退出正在运行的容器
+
+2. 将运行中的容器封装成镜像:
+	- docker commit -m="cvnlp" -a="fwf" 08c2346f8d33 cvnlp:v2 (将运行中的容器封装成新的镜像,这个操作不会关闭容器)
+
+3. 具体的可以参考[Sep_30_docker以及教研室服务器使用记录](Sep_30_docker以及教研室服务器使用记录)
+
+4. 将docker内文件拷贝到本地文件夹内:
+	- docker cp 749056ea1637:/Users/howey/Documents/apache-maven-3.5.2 /opt/
+	- docker cp 容器Id:容器内路径 本地路径
+	- 在宿主机(本地)上面执行命令
+
+5. 从宿主机(本地)拷文件到容器里面:
+	- docker cp /opt/test.js testtomcat：/usr/local/tomcat/webapps/test/js
+	- 在宿主机(本地)里面执行如下命令
