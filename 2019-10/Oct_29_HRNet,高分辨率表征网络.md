@@ -25,3 +25,5 @@ Sep_29_HRNet,高分辨率表征网络
 7. 参考[HRNet详解](https://blog.csdn.net/weixin_37993251/article/details/88043650)
 
 8. HRNet还提供两个轻量级的版本:HRNet-W18-C-Small-v1 和 HRNet-W18-C-Small-v2,介绍说#parameters and GFLOPs are similar to ResNet18.
+
+10. 描述HRNET的关键词：高分辨率，并行的多分辨率子网反复交换信息；

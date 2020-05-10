@@ -1,15 +1,4 @@
-##Oct_14_SPP_layer和ROI_pooling_layer和ROIAlign的学习
-
-###SPP_layer
-
-1. SPP_layer(spatial pyramid pooling)首次出现于spp net中，是比fast rcnn还要早的网络，用于目标检测，其作用是加在CNN层和fcn层之间，使得CNN层可以接受任意size的输入。下图是spp_layer的示意图：![](./images/spp_layer.png)
-
-2. SPP_layer步骤：
-1) 任意大小输入层经过卷积运算之后得到特征(feature maps),其大小任意，取决于输入的size(输入就是不同size的bbox)。
-2) 进入SPP层,分别将256层的特征分为16X256、4X256和1X256份，之后对每一份做池化操作，一般选择MAX Pooling，即对每一份进行最大池化，则变为16X256+4X256+1X256=21X256的矩阵，送入全连接时可以扩展成一维矩阵，即1X10752。
-3) 这样也就解决了输入数据大小任意的问题了。
-
-参考[空间金字塔池化层原理和代码实现](https://www.cnblogs.com/marsggbo/p/8572846.html)
+##Oct_14_ROI_pooling_layer和ROIAlign的学习
 
 ###ROI pooling layer
 

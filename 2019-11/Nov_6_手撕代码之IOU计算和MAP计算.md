@@ -3,7 +3,7 @@ Nov_6_手撕代码之IOU计算和MAP计算和混淆矩阵计算
 
 1. 首先目标检测iou的计算公式:![](./images/iou.png)
 
-2. caffee源码计算目标检测bbox的iou的公式:
+2. caffee源码计算目标检测bbox的iou的公式:（手写nms包含了求miou）
 
 ```C++
 template <typename Dtype>
@@ -58,7 +58,7 @@ Dtype BBoxSize(const Dtype* bbox, const bool normalized) {
 
 语义分割iou
 ----
-3. 计算语义分割label的iou的步骤:先计算混淆矩阵,通过混淆矩阵计算IOU.假设混淆矩阵为confusion_matrix,则IOU为:iu = np.diag(confusion_matrix) / (confusion_matrix.sum(axis=1) + confusion_matrix.sum(axis=0) - np.diag(confusion_matrix)),然后 mean_iu = np.nanmean(iu)
+3. 计算语义分割label的iou的步骤:先计算混淆矩阵,通过混淆矩阵计算IOU.假设混淆矩阵为confusion_matrix,则IOU为:iu = np.diag(confusion_matrix) / (confusion_matrix.sum(axis=1) + confusion_matrix.sum(axis=0) - np.diag(confusion_matrix)),然后 mean_iu = np.nanmean(iu)；（每一个类别有自己的iou，miou是所有类别的平均）
 
 4. 混淆矩阵计算代码:
 ```
@@ -75,3 +75,8 @@ MAP(mean Average Precision)
 ---
 1. 目标检测计算map之前要先计算precision和recall的值,map计算还是比较复杂的.
 2. 具体怎样计算MAP可以看[最完整的检测模型评估指标mAP计算指南(附代码)在这里！](https://www.imooc.com/article/44040)
+3. 总结： 首先固定不同recall下的precision值，常常recall取11个点，如[0.1, 0.2, 0.3, ...]；
+
+-----------
+
+目前掌握的评价指标的计算：miou(检测和分割),MAP,precision,recall,F-score;

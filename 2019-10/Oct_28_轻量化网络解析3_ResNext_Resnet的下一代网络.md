@@ -26,6 +26,10 @@
 
 10. resnet50 和 resnext50 的参数量和FLOPs基本是相同的.
 
-10 .参考: [ResNext,与resnet相比,相同参数下结果更好](https://www.cnblogs.com/bonelee/p/9031639.html)
+11. 参考: [ResNext,与resnet相比,相同参数下结果更好](https://www.cnblogs.com/bonelee/p/9031639.html)
 [经典分类CNN模型系列其八：ResNeXt](https://www.jianshu.com/p/7478ce41e46b)
+
+12. resnext和xception的区别在于残差结构!两者都是使用组卷积和1x1卷积，但是xception网络中没有残差结构；
+
+
 

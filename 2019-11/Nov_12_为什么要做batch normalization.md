@@ -22,5 +22,5 @@ Nov_12_为什么要做batch normalization以及一些BN的小细节
 8. 暂时理解为:batch normalization 的参数是一个通道两个,即输入feature map为6,则参数为6个贝塔,6个gamma.
 
 9. batch normalization的另外两个作用:
-	- 加速收敛:原因上面
-	- 防止过拟合:原因:batch N 是在一整个batch上做的,不是在单个样本上进行.
+	- 加速收敛(加快训练速度):原因上面
+	- 防止梯度消失
