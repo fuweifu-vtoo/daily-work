@@ -52,7 +52,6 @@
 	- BCEWithLogitsLoss，交叉熵系列：将sigmoid函数和BCELoss方法结合到一个类中。
 	- NLLLoss(多分类)，交叉熵系列：
 	- CrossEntropyLoss(多分类），交叉熵系列：将nn.LogSoftmax()和nn.NLLLoss()方法结合到一个类中。推倒之后的损失函数为：
-	- 
 	- L1Loss(L1 norm)，回归系列：
 	- MSELoss(L2 norm)，回归系列：
 	- SmoothL1Loss(special L1 norm)，回归系列：

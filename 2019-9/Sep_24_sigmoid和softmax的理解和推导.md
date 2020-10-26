@@ -47,6 +47,8 @@ Softmax Function Output :: [ 0.01275478  0.03467109  0.25618664  0.69638749]，�
 
 6. sigmoid一般用于二分类，softmax一般用于多分类。
 
+7. 这个讲的很不错：[https://blog.csdn.net/bitcarmanlee/article/details/82320853](https://blog.csdn.net/bitcarmanlee/article/details/82320853)
+
 ##(交叉熵损失函数+softmax)的求导，非常important
 
 7. softmax的求导：前面提到，在多分类问题中，我们经常使用交叉熵作为损失函数![](./images/fun1.png).(其实，最原始应该是这样的：![](./images/cross_entorpy.png))其中，ti表示真实值，yi表示求出的softmax值。当预测第i个时，可以认为ti=1(所以才会只有一项，这个点很重要)。此时损失函数变成了:![](./images/fun2.png) .接下来对Loss求导。根据定义:![](./images/fun3.png).我们已经将数值映射到了0-1之间，并且和为1，则有:![](./images/fun4.png).接下来开始求导:![](./images/fun5.png)（倒数第三行少了一个“-”号）。上面的结果表示，我们只需要正向求出yi，将结果减1就是反向更新的梯度，导数的计算非常简单。
