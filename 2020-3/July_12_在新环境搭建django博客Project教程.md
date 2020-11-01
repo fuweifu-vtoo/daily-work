@@ -1,9 +1,9 @@
-##在新环境搭建Django博客Project教程
+在新环境搭建Django博客Project教程
 ---
 假设已经根据[django博客教程]()成功搭建了自己的博客，并且已经将其发布到[github]()以及自己的私人服务器上。
 现在需要在新的电脑或者环境上搭建一个管理该django博客的project，可以按照下面的步骤操作：
 
-###在本地还原博客环境
+### 在本地还原博客环境
 
 ---
 - 安装py3.5（ubuntu16.04会自带py3.5.2）。
@@ -22,7 +22,7 @@
 
 ----
 
-###还原后首次修改博客发布到远端
+### 还原后首次修改博客发布到远端
 
 ----
 - 在blogproject_env环境中查看本地blog的预览，方便修改blog的工程代码，此时的python版本是3.5的。
@@ -88,7 +88,8 @@ def deploy():
 - fabfile.py文件写完之后，保存下来。用python2的环境运行fabfile.py文件，使用命令[fab deploy](),这时 Fabric 会自动检测到 fabfile.py 脚本中的 deploy 函数并运行。
 - 如果在最后看到[Done. Disconnecting from zmrenwu.com... done](),说明脚本运行成功。而如果看到[Aborting. Disconnecting from zmrenwu.com... done.](),说明脚本运行中出错，检查一下命令行输入的错误信息，修复问题后重新运行脚本。
 
-###还原后非首次修改博客发布到远端
+### 还原后非首次修改博客发布到远端
+
 - 首先启动blogproject_env环境，用[source /home/vtoo/Documents/bolgproject_env/bin/activate]()来激活环境。
 - 在blogproject_env环境中查看本地blog的预览，方便修改blog的工程代码，此时的python版本是3.5的。
 - 修改完blog的工程代码，使用[git status]() + [git add .]() + [git commit -m "xxx"]() + [git push -u]()将修改后的代码发布到github上。
