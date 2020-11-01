@@ -87,6 +87,7 @@ def deploy():
 
 - fabfile.py文件写完之后，保存下来。用python2的环境运行fabfile.py文件，使用命令[fab deploy](),这时 Fabric 会自动检测到 fabfile.py 脚本中的 deploy 函数并运行。
 - 如果在最后看到[Done. Disconnecting from zmrenwu.com... done](),说明脚本运行成功。而如果看到[Aborting. Disconnecting from zmrenwu.com... done.](),说明脚本运行中出错，检查一下命令行输入的错误信息，修复问题后重新运行脚本。
+- 目前可能因为版本原因，fab的脚本一直有错误，目前采取的替代办法是，登录博客服务器，按照fabfile.py文件的指示，手动操作进行更新。
 
 ### 还原后非首次修改博客发布到远端
 
@@ -95,6 +96,7 @@ def deploy():
 - 修改完blog的工程代码，使用[git status]() + [git add .]() + [git commit -m "xxx"]() + [git push -u]()将修改后的代码发布到github上。
 - 退出blogproject_env环境，使用python2的环境运行fabfile.py文件，使用命令[fab deploy](),这时 Fabric 会自动检测到 fabfile.py 脚本中的 deploy 函数并运行。
 - 如果在最后看到[Done. Disconnecting from zmrenwu.com... done](),说明脚本运行成功。而如果看到[Aborting. Disconnecting from zmrenwu.com... done.](),说明脚本运行中出错，检查一下命令行输入的错误信息，修复问题后重新运行脚本。
+- 目前可能因为版本原因，fab的脚本一直有错误，目前采取的替代办法是，登录博客服务器，按照fabfile.py文件的指示，手动操作进行更新。
 
 <center>
 by [fuweifu](http://www.vtoo.pro)
