@@ -1,4 +1,4 @@
-在新环境搭建Django博客Project教程
+在新的本地环境搭建Django博客Project教程
 ---
 假设已经根据[django博客教程]()成功搭建了自己的博客，并且已经将其发布到[github]()以及自己的私人服务器上。
 现在需要在新的电脑或者环境上搭建一个管理该django博客的project，可以按照下面的步骤操作：
@@ -98,6 +98,7 @@ def deploy():
 - 退出blogproject_env环境，使用python2的环境运行fabfile.py文件，使用命令[fab deploy](),这时 Fabric 会自动检测到 fabfile.py 脚本中的 deploy 函数并运行。
 - 如果在最后看到[Done. Disconnecting from zmrenwu.com... done](),说明脚本运行成功。而如果看到[Aborting. Disconnecting from zmrenwu.com... done.](),说明脚本运行中出错，检查一下命令行输入的错误信息，修复问题后重新运行脚本。
 - 目前可能因为版本原因，fab的脚本一直有错误，目前采取的替代办法是，登录博客服务器，按照fabfile.py文件的指示，手动操作进行更新。
+- 目前主要开发环境已经迁移到台式机，台式机因为有anaconda，刚进入终端，会处在anaconda的base环境中，需要先退出到ubuntu自带的环境，再开启virtualenv的blogproject_env环境进行开发。
 
 <center>
 by [fuweifu](http://www.vtoo.pro)
