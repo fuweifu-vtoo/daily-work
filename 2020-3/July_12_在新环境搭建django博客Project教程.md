@@ -8,7 +8,7 @@
 ---
 - 安装py3.5（ubuntu16.04会自带py3.5.2）。
 - 安装pip3，使用[sudo apt-get install python3-pip]()。
-- 安装virtualenv，使用[pip3 install virtualenv]()。
+- 安装virtualenv，使用[pip3 install virtualenv==16.6.1]()。
 - 创建blogproject_env虚拟环境，使用[virtualenv home/vtoo/Document/blogproject_env]()，且因为是用的pip3安装的virtualenv，所以在这个环境里只能用py3.5.2。
 - 激活blogproject_env虚拟环境，使用[source home/vtoo/Document/blogproject_env/bin/activate]()。
 - 将在github上的blogproject的工程git到本地，使用[git clone url]()。
