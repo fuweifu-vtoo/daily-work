@@ -12,13 +12,14 @@
 - 创建blogproject_env虚拟环境，使用[virtualenv home/vtoo/Document/blogproject_env]()，且因为是用的pip3安装的virtualenv，所以在这个环境里只能用py3.5.2。
 - 激活blogproject_env虚拟环境，使用[source home/vtoo/Document/blogproject_env/bin/activate]()。
 - 将在github上的blogproject的工程git到本地，使用[git clone url]()。
-- 安装当前库依赖，使用[pip install -r requirements.txt](),会自动安装上博客project需要的库。
+- 安装当前库依赖，使用[pip install -r requirements.txt](),会自动安装上博客project需要的库(如果报错,就按照requirements.txt目录,一个一个安装)。
 - 迁移数据库模型，先使用[python manage.py makemigrations]()让django完成翻译，创建需要的迁移，之后使用[python manage.py migrate](),将各个应用的数据库模型进行迁移。如果之后对模型有修改，就依次使用[python manage.py makemigrations]()和[python manage.py migrate]()。
 - 使用[python manage.py runsrver](),查看django是否可以正常运行，不报错的话就打开网址[http://127.0.0.1:8000/]()。
 - 登录网址[http://127.0.0.1:8000/]()后报错[IndexError Exception Value:list index out of range](),这是因为当前数据库中没有**home，about，Todolist，contact，blog**的访问次数的初始化表格数据，但是远程服务器端是有的，这里需要在后台手动创建表格中的这五个数据，在代码中不能初始化，所以要先在代码中把这5个部分的view.py中的[refresh_visitnumber(request,'home')]()代码注释，分别对应报错的那几句代码，便可以正常运行project。
 - 使用[python manage.py createsuperuser]()创建本地的后台管理账号，因为数据库的数据不会上传，所以这个和远程服务器端是不会冲突的，只用来管理本地的数据库。
 - 进入后台，在后台**各页面de访问次数**中分别创建**home，about，Todolist，contact，blog**这5个数据，然后可以在代码中把先前注释了的代码复原，便可以完全正常运行博客project。
 - **(可省略)**运行 [python manage.py collectstatic]() 命令收集静态文件到 static 目录下.
+- 更简便的方法是,直接拷贝在其他本地电脑的blogproject,安装完py包之后就直接能用.
 
 ----
 
